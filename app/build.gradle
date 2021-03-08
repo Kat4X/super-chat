@@ -1,11 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id "androidx.navigation.safeargs.kotlin"
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+
+    buildFeatures {
+        viewBinding true
+    }
 
     defaultConfig {
         applicationId "com.zet.superchat"
@@ -34,6 +41,9 @@ android {
 
 dependencies {
 
+    //GP TODO add firebase
+    //implementation 'com.google.android.gms:play-services-location:18.0.0'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -44,4 +54,71 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    // ArchitectureComponents
+    implementation 'androidx.activity:activity-ktx:1.2.0'
+    implementation 'androidx.fragment:fragment-ktx:1.3.0'
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    // optional - helpers for implementing LifecycleOwner in a Service
+    // implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation 'androidx.hilt:hilt-navigation-fragment:1.0.0-alpha03'
+
+    // Room
+    implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
+    implementation "androidx.room:room-ktx:2.2.6"
+
+    //Ktor
+    def ktor_version = '1.3.0'
+    implementation "io.ktor:ktor-client-android:$ktor_version"
+    implementation "io.ktor:ktor-client-okhttp:$ktor_version"
+    implementation "io.ktor:ktor-client-cio:$ktor_version"
+    implementation "io.ktor:ktor-client-serialization-jvm:$ktor_version"
+
+    // Coil
+    implementation "io.coil-kt:coil:1.1.1"
+
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // Lottie
+    implementation "com.airbnb.android:lottie:3.6.1"
+
+    // Shimmer from Facebook
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    // Pagination
+    implementation 'androidx.paging:paging-runtime-ktx:3.0.0-beta01'
+
+    //Gsm services
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.android.gms:play-services-safetynet:17.0.0'
+
+    //Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:1.11.0"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.11.0"
+
+    //DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha07"
 }
