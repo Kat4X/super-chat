@@ -12,10 +12,9 @@ import com.zet.superchat.R
 import com.zet.superchat.databinding.FragmentMainPlaceholderMentBinding
 import com.zet.superchat.utils.ViewBindingHolder
 import com.zet.superchat.utils.ViewBindingHolderImpl
+import dagger.hilt.android.AndroidEntryPoint
 
-/**
- * A placeholder fragment containing a simple view.
- */
+@AndroidEntryPoint
 class MainPlaceholderFragment : Fragment(),
     ViewBindingHolder<FragmentMainPlaceholderMentBinding> by ViewBindingHolderImpl() {
 
