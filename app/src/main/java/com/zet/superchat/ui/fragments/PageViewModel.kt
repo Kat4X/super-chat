@@ -1,4 +1,4 @@
-package com.zet.superchat.ui.main
+package com.zet.superchat.ui.fragments
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

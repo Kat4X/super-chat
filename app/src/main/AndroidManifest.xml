@@ -12,7 +12,7 @@
         android:name=".BaseApp"
         android:theme="@style/Theme.SuperChat">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.SuperChat.NoActionBar">
             <intent-filter>

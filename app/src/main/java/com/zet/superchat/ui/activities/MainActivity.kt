@@ -1,12 +1,15 @@
-package com.zet.superchat
+package com.zet.superchat.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.zet.superchat.databinding.ActivityMainBinding
-import com.zet.superchat.ui.main.MainPlaceholderFragment
-import com.zet.superchat.ui.main.SectionsPagerAdapter
+import com.zet.superchat.ui.fragments.chatsList.ChatListFragment
+import com.zet.superchat.ui.fragments.SectionsPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.run {
             val sectionsPagerAdapter =
-                SectionsPagerAdapter(listOf(MainPlaceholderFragment(), MainPlaceholderFragment()), this@MainActivity)
+                SectionsPagerAdapter(listOf(ChatListFragment(), ChatListFragment()), this@MainActivity)
             pager.adapter = sectionsPagerAdapter
             TabLayoutMediator(tabs, pager) { tab, position ->
                 tab.text = "OBJECT ${(position + 1)}"
@@ -32,4 +35,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }

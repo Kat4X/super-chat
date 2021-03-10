@@ -1,4 +1,4 @@
-package com.zet.superchat.ui.main
+package com.zet.superchat.ui.fragments
 
 import android.app.Activity
 import androidx.fragment.app.Fragment
